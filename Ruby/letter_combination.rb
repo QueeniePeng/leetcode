@@ -76,7 +76,6 @@ def permutation(arr1, arr2)
 end
 
 require 'minitest/autorun'
-
 class LetterCombinationsTest < Minitest::Test
   def test_example1
     assert_equal(["ad","ae","af","bd","be","bf","cd","ce","cf"], letter_combinations('23'))

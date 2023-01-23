@@ -116,4 +116,3 @@ end
 
 puts min_reorder(5, [[4,3],[2,3],[1,2],[1,0]])
 # Output: 2
-

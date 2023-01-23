@@ -52,7 +52,6 @@ def product_except_self(nums)
     j -= 1
   end
 
-  print r[j]
   (0...n).map { |k| l[k] * r[k] }
 end
 

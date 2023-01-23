@@ -30,5 +30,5 @@ def reverse_str(s, k)
       left, right = i, [i+k-1, s.length-1].min
       s[left..right] = s[left..right].reverse
   end
-  return s.join
+  s.join
 end

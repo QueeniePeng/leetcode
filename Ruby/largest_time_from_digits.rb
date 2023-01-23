@@ -26,7 +26,6 @@
 # @param {Integer[]} arr
 # @return {String}
 def largest_time_from_digits(arr)
-
   perm = arr.permutation.to_a
   times = perm.select do |p|
     hour = p[0..1].join.to_i
@@ -35,7 +34,6 @@ def largest_time_from_digits(arr)
   end
   puts times
   return '' if times.empty?
-
 
   latest_time = times.max_by do |t|
     t[0..1].join.to_i * 60 + t[2..3].join.to_i

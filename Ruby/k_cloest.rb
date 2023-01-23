@@ -36,7 +36,6 @@
 # @param {Integer} k
 # @return {Integer[][]}
 def k_closest(points, k)
-
   h = {}
   ans = []
   points.each do |p|
