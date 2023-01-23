@@ -47,13 +47,13 @@ def add_two_numbers(l1, l2)
   b = ''
 
   while l1
-      a += l1.val.to_s
-      l1 = l1.next
+    a += l1.val.to_s
+    l1 = l1.next
   end
 
   while l2
-      b += l2.val.to_s
-      l2 = l2.next
+    b += l2.val.to_s
+    l2 = l2.next
   end
 
   total = a.to_i + b.to_i
@@ -61,9 +61,8 @@ def add_two_numbers(l1, l2)
   current = root
 
   total.to_s.each_char.with_index do |c, i|
-      current.next = ListNode.new(c.to_i)
-      current = current.next
+    current.next = ListNode.new(c.to_i)
+    current = current.next
   end
   root.next
 end
-

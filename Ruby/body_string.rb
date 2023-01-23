@@ -46,9 +46,9 @@ def buddy_strings(s, goal)
     end
   end
   return can_swap if ans.empty?
-  
+
   if ans.length == 2
-      return s[ans[0]] == goal[ans[1]] && s[ans[1]] == goal[ans[0]]
+    return s[ans[0]] == goal[ans[1]] && s[ans[1]] == goal[ans[0]]
   end
   false
 end

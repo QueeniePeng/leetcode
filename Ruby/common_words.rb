@@ -44,34 +44,20 @@ def common_chars(words)
   ans
 end
 
-# def common_chars(words)
-#   return [] if words.empty?
-
-#   arr = words[0].to_a
-#   ans = []
-
-#   (1...words.length).each do |i|
-#     words[i].each_char do |c|
-#       if c
-#     end
-#   end
-# end
-
 def common_chars(words)
   common_count = Hash.new(0)
   words.first.chars.each { |char| common_count[char] += 1 }
 
   words.each do |word|
-      common_count.each do |char, count|
-          common_count[char] = [count, word.count(char)].min
-      end
+    common_count.each do |char, count|
+      common_count[char] = [count, word.count(char)].min
+    end
   end
 
   result = []
   common_count.each do |char, count|
-      result += Array.new(count, char) if count.positive?
+    result += Array.new(count, char) if count.positive?
   end
-
   result
 end
 

@@ -43,15 +43,15 @@ def dfs(v, parent, graph, dfn, low, timestamp, res)
   dfn[v] = low[v] = timestamp
   timestamp += 1
   graph[v].each do |neighbor|
-      if dfn[neighbor] == -1
-          dfs(neighbor, v, graph, dfn, low, timestamp, res)
-          low[v] = [low[v], low[neighbor]].min
-          if dfn[v] < low[neighbor]
-              res << [v, neighbor]
-          end
-      elsif neighbor != parent
-          low[v] = [low[v], dfn[neighbor]].min
+    if dfn[neighbor] == -1
+      dfs(neighbor, v, graph, dfn, low, timestamp, res)
+      low[v] = [low[v], low[neighbor]].min
+      if dfn[v] < low[neighbor]
+        res << [v, neighbor]
       end
+    elsif neighbor != parent
+      low[v] = [low[v], dfn[neighbor]].min
+    end
   end
 end
 

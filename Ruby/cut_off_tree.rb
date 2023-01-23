@@ -53,67 +53,63 @@ def cut_off_tree(forest)
   @m = forest.length
   @n = forest[0].length
 
-  nextTree()
+  next_tree
   @res
 end
 
-def nextTree
+def next_tree
   if @x != @n || @y != @m
-    if isDownTree()
+    if down
       @y += 1
       @res += 1
-      nextTree()
+      next_tree
     end
 
-    if isRightTree()
+    if right
       @x += 1
       @res += 1
-      nextTree()
+      next_tree
     end
 
-    if isUpTree()
+    if up
       @y -= 1
       @res += 1
-      nextTree()
+      next_tree
     end
 
-    if isLeftTree()
+    if left
       @x -= 1
       @res += 1
-      nextTree()
+      next_tree
     end
   end
 end
 
-def isDownTree
+def down
   current = @f[@y][@x]
-  if @y < @m - 1
-    return @f[@y+1][@x] == current + 1
-  end
+  return @f[@y + 1][@x] == current + 1 if @y < @m - 1
+
   false
 end
 
-def isRightTree
+def right
   current = @f[@y][@x]
-  if @x < @n - 1
-    return @f[@y][@x+1] == current + 1
-  end
+  return @f[@y][@x + 1] == current + 1 if @x < @n - 1
+
   false
 end
 
-def isUpTree
+def up
   current = @f[@y][@x]
-  if @y > 0
-    return @f[@y-1][@x] == current + 1
-  end
+  return @f[@y - 1][@x] == current + 1 if @y > 0
+    
   false
 end
 
-def isLeftTree
+def left
   current = @f[@y][@x]
-  if @x > 0
-    return @f[@y][@x-1] == current + 1
-  end
+  return @f[@y][@x - 1] == current + 1 if @x.positive?
+
   false
 end
 

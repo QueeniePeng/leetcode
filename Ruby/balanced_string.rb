@@ -34,15 +34,12 @@
 # @param {String} s
 # @return {Integer}
 def balanced_string_split(s)
-  
-  h = {'L' => 0, 'R' => 0}
+  h = { 'L': 0, 'R': 0 }
   ans = 0
 
   s.each_char do |c|
     h[c] += 1
-    if h['L'] == h['R']
-        ans += 1
-    end
+    ans += 1 if h['L'] == h['R']
   end
   ans
 end

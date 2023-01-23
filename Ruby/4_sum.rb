@@ -132,12 +132,8 @@ def four_sum(nums, target)
 end
 
 
-puts four_sum([1, 0, -1, 0, -2, 2], 0)
-[-2, -2, -1, 0, 0, 1, 2]
-
 require 'minitest/autorun'
 
-four sum tests
 class FourSumTests < Minitest::Test
   def test_example1
     assert_equal(four_sum([1, 0, -1, 0, -2, 2], 0), [[-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1]])
@@ -147,5 +143,3 @@ class FourSumTests < Minitest::Test
     assert_equal(four_sum([2, 2, 2, 2, 2], 8), [[2, 2, 2, 2]])
   end
 end
-
-# [1, 0, -1, 0, -2, 2]

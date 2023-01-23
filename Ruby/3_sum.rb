@@ -100,10 +100,8 @@ end
 
 require 'minitest/autorun'
 
-# 3 sum
 class ThreeSumTests < Minitest::Test
   def test_example1
     assert_equal(three_sum([-1, 0, 1, 2, -1, -4]), [[-1, 0, 1], [-1, -1, 2]])
   end
-
 end
