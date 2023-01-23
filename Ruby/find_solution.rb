@@ -66,7 +66,7 @@ def findSolution(customfunction, z)
   x = 1
   y = 1000
 
-  while x <= 1000 && y,positive?
+  while x <= 1000 && y.positive?
     result = customfunction.f(x, y)
     if result == z
       results << [x, y]
