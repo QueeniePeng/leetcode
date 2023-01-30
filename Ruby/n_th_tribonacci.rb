@@ -45,20 +45,24 @@
 
 def tribonacci(n)
   return 0 if n.zero?
-  return 1 if n == 1 || n == 2
+  return 1 if [1, 2].include?(n)
 
-  i = 1
-  ans = Array.new(n + 1, 0)
+  i = 3
+  ans = [0, 1, 1]
 
   while i <= n
-    if i == 1 || i == 2
-      ans[i] = 1
-    else
-      ans[i] = ans[i-1] + ans[i-2] + ans[i-3]
-    end
+    ans[i] = ans[i - 1] + ans[i - 2] + ans[i - 3]
     i += 1
   end
   ans[-1]
+end
+
+def tribonacci(n, ans = [])
+  return 0 if n.zero?
+  return 1 if [1, 2].include?(n)
+  return ans[n] if ans[n]
+
+  ans[n] = tribonacci(n - 1, ans) + tribonacci(n - 2, ans) + tribonacci(n - 3, ans)
 end
 
 require 'test/unit'
