@@ -61,5 +61,10 @@ def tribonacci(n)
   ans[-1]
 end
 
-puts tribonacci(4)
-puts tribonacci(25)
+require 'test/unit'
+class Test_tribonacci < Test::Unit::TestCase
+  def test_
+    assert_equal 4, tribonacci(4)
+    assert_equal 1389537, tribonacci(25)
+  end
+end
