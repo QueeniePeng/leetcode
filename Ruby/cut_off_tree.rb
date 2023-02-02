@@ -9,18 +9,14 @@
 
 # Starting from the point (0, 0), return the minimum steps you need to walk to cut off all the trees. If you cannot cut off all the trees, return -1.
 
-# Note: The input is generated such that no two trees have the same height, and there is at least one tree needs to be cut off.
-
- 
+# NOTE: The input is generated such that no two trees have the same height, and there is at least one tree needs to be cut off.
 
 # Example 1:
-
 
 # Input: forest = [[1,2,3],[0,0,4],[7,6,5]]
 # Output: 6
 # Explanation: Following the path above allows you to cut off the trees from shortest to tallest in 6 steps.
 # Example 2:
-
 
 # Input: forest = [[1,2,3],[0,0,0],[7,6,5]]
 # Output: -1
@@ -31,7 +27,6 @@
 # Output: 6
 # Explanation: You can follow the same path as Example 1 to cut off all the trees.
 # Note that you can cut off the first tree at (0, 0) before making any steps.
- 
 
 # Constraints:
 
@@ -44,7 +39,6 @@
 # @param {Integer[][]} forest
 # @return {Integer}
 def cut_off_tree(forest)
-
   @f = forest
   @x = 0
   @y = 0
@@ -102,7 +96,7 @@ end
 def up
   current = @f[@y][@x]
   return @f[@y - 1][@x] == current + 1 if @y > 0
-    
+
   false
 end
 
@@ -113,4 +107,4 @@ def left
   false
 end
 
-puts cut_off_tree([[1,2,3],[0,0,4],[7,6,5]])
+puts cut_off_tree([[1, 2, 3], [0, 0, 4], [7, 6, 5]])

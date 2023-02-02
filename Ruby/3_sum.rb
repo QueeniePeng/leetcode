@@ -7,13 +7,11 @@
 
 # Notice that the solution set must not contain duplicate triplets.
 
- 
-
 # Example 1:
 
 # Input: nums = [-1,0,1,2,-1,-4]
 # Output: [[-1,-1,2],[-1,0,1]]
-# Explanation: 
+# Explanation:
 # nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
 # nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
 # nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
@@ -29,7 +27,6 @@
 # Input: nums = [0,0,0]
 # Output: [[0,0,0]]
 # Explanation: The only possible triplet sums up to 0.
- 
 
 # Constraints:
 
@@ -53,14 +50,12 @@ def three_sum(nums)
   length = nums.length - 1
   res = []
 
-  for i in (0..length)
-    for j in (i+1..length)
-      for k in (j+1..length)
+  (0..length).each do |i|
+    (i + 1..length).each do |j|
+      (j + 1..length).each do |k|
         arr = [nums[i], nums[j], nums[k]]
         sum = nums[i] + nums[j] + nums[k]
-        if sum == 0 && !res.include?(arr)
-          res.push([nums[i], nums[j], nums[k]])
-        end
+        res.push([nums[i], nums[j], nums[k]]) if sum == 0 && !res.include?(arr)
       end
     end
   end
@@ -89,9 +84,7 @@ def three_sum(nums)
         res.push(arr)
         l += 1
 
-        while nums[l] == nums[l - 1] && l < r
-          l += 1
-        end
+        l += 1 while nums[l] == nums[l - 1] && l < r
       end
     end
   end

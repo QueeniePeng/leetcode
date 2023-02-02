@@ -2,8 +2,6 @@
 
 # Given three integers n, k, and target, return the number of possible ways (out of the kn total ways) to roll the dice, so the sum of the face-up numbers equals target. Since the answer may be too large, return it modulo 109 + 7.
 
- 
-
 # Example 1:
 
 # Input: n = 1, k = 6, target = 3
@@ -21,7 +19,6 @@
 # Input: n = 30, k = 30, target = 500
 # Output: 222616187
 # Explanation: The answer must be returned modulo 109 + 7.
- 
 
 # Constraints:
 
@@ -49,14 +46,13 @@
 #   ans
 # end
 
-
 #### time limit
 def num_rolls_to_target(n, k, target)
   @m = 10**9 + 7
   @k = k
 
-  @has_cache = Array.new(n+1) { Array.new(target+1) }
-  @cache = Array.new(n+1) { Array.new(target+1) }
+  @has_cache = Array.new(n + 1) { Array.new(target + 1) }
+  @cache = Array.new(n + 1) { Array.new(target + 1) }
 
   count(n, target)
 end
@@ -66,7 +62,7 @@ def count(left, target)
     if target.zero?
       return 1
     else
-     return 0
+      return 0
     end
   end
 
@@ -85,4 +81,4 @@ def count(left, target)
   ways %= @m
 end
 
-puts num_rolls_to_target(1,6,3)
+puts num_rolls_to_target(1, 6, 3)

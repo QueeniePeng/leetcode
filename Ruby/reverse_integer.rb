@@ -7,8 +7,6 @@
 
 # Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
 
- 
-
 # Example 1:
 
 # Input: x = 123
@@ -21,7 +19,6 @@
 
 # Input: x = 120
 # Output: 21
- 
 
 # Constraints:
 
@@ -34,7 +31,6 @@
 # 27.3%
 # Seen this question in a real interview before?
 # 1/4
-
 
 # @param {Integer} x
 # @return {Integer}

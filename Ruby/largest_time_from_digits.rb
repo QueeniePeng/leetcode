@@ -4,8 +4,6 @@
 
 # Return the latest 24-hour time in "HH:MM" format. If no valid time can be made, return an empty string.
 
- 
-
 # Example 1:
 
 # Input: arr = [1,2,3,4]
@@ -16,7 +14,6 @@
 # Input: arr = [5,5,5,5]
 # Output: ""
 # Explanation: There are no valid 24-hour times as "55:55" is not valid.
- 
 
 # Constraints:
 
@@ -42,4 +39,4 @@ def largest_time_from_digits(arr)
   puts "#{latest_time[0..1].join('')}:#{latest_time[2..3].join('')}"
 end
 
-puts largest_time_from_digits([1,2,3,4])
+puts largest_time_from_digits([1, 2, 3, 4])

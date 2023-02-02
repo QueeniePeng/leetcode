@@ -8,16 +8,12 @@
 
 # It's guaranteed that each city can reach city 0 after reorder.
 
- 
-
 # Example 1:
-
 
 # Input: n = 6, connections = [[0,1],[1,3],[2,3],[4,0],[4,5]]
 # Output: 3
 # Explanation: Change the direction of edges show in red such that each node can reach the node 0 (capital).
 # Example 2:
-
 
 # Input: n = 5, connections = [[1,0],[1,2],[3,2],[3,4]]
 # Output: 2
@@ -26,7 +22,6 @@
 
 # Input: n = 3, connections = [[1,0],[2,0]]
 # Output: 0
- 
 
 # Constraints:
 
@@ -89,7 +84,7 @@
 
 require 'set'
 
-def min_reorder(n, connections)
+def min_reorder(_n, connections)
   @connects = connections.to_set
   @neighbors = Hash.new { |hash, key| hash[key] = [] }
   @ans = 0
@@ -114,5 +109,5 @@ def traverse(city)
   end
 end
 
-puts min_reorder(5, [[4,3],[2,3],[1,2],[1,0]])
+puts min_reorder(5, [[4, 3], [2, 3], [1, 2], [1, 0]])
 # Output: 2

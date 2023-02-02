@@ -1,7 +1,5 @@
-# Given a string array words, return an array of all characters that show up in 
+# Given a string array words, return an array of all characters that show up in
 # all strings within the words (including duplicates). You may return the answer in any order.
-
- 
 
 # Example 1:
 
@@ -11,7 +9,6 @@
 
 # Input: words = ["cool","lock","cook"]
 # Output: ["c","o"]
- 
 
 # Constraints:
 
@@ -33,12 +30,12 @@ def common_chars(words)
   l = words.count
   ans = []
   dict.each do |k, v|
-    if v >= l
-      n = v / l
-      while n > 1
-        arr << k
-        n -= 1
-      end
+    next unless v >= l
+
+    n = v / l
+    while n > 1
+      arr << k
+      n -= 1
     end
   end
   ans
@@ -61,4 +58,4 @@ def common_chars(words)
   result
 end
 
-puts common_chars(["cool","lock","cook"])
+puts common_chars(%w[cool lock cook])

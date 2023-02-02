@@ -4,8 +4,6 @@
 
 # You must write an algorithm that runs in O(n) time and without using the division operation.
 
- 
-
 # Example 1:
 
 # Input: nums = [1,2,3,4]
@@ -14,14 +12,12 @@
 
 # Input: nums = [-1,1,0,-3,3]
 # Output: [0,0,9,0,0]
- 
 
 # Constraints:
 
 # 2 <= nums.length <= 105
 # -30 <= nums[i] <= 30
 # The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
- 
 
 # Follow up: Can you solve the problem in O(1) extra space complexity? (The output array does not count as extra space for space complexity analysis.)
 
@@ -55,5 +51,5 @@ def product_except_self(nums)
   (0...n).map { |k| l[k] * r[k] }
 end
 
-puts product_except_self([-1,1,0,-3,3])
+puts product_except_self([-1, 1, 0, -3, 3])
 # [0,0,9,0,0]

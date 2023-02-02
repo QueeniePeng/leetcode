@@ -7,10 +7,7 @@
 
 # A matrix is Toeplitz if every diagonal from top-left to bottom-right has the same elements.
 
- 
-
 # Example 1:
-
 
 # Input: matrix = [[1,2,3,4],[5,1,2,3],[9,5,1,2]]
 # Output: true
@@ -20,12 +17,10 @@
 # In each diagonal all elements are the same, so the answer is True.
 # Example 2:
 
-
 # Input: matrix = [[1,2],[2,2]]
 # Output: false
 # Explanation:
 # The diagonal "[1, 2]" has different elements.
- 
 
 # Constraints:
 
@@ -33,7 +28,6 @@
 # n == matrix[i].length
 # 1 <= m, n <= 20
 # 0 <= matrix[i][j] <= 99
- 
 
 # Follow up:
 
@@ -73,5 +67,5 @@ def is_toeplitz_matrix(matrix)
   true
 end
 
-puts is_toeplitz_matrix([[1,2,3,4],[5,1,2,3],[9,5,1,2]])
-puts is_toeplitz_matrix([[36,59,71,15,26,82,87],[56,36,59,71,15,26,82],[15,0,36,59,71,15,26]])
+puts is_toeplitz_matrix([[1, 2, 3, 4], [5, 1, 2, 3], [9, 5, 1, 2]])
+puts is_toeplitz_matrix([[36, 59, 71, 15, 26, 82, 87], [56, 36, 59, 71, 15, 26, 82], [15, 0, 36, 59, 71, 15, 26]])

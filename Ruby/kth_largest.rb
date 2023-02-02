@@ -4,7 +4,6 @@
 
 # KthLargest(int k, int[] nums) Initializes the object with the integer k and the stream of integers nums.
 # int add(int val) Appends the integer val to the stream and returns the element representing the kth largest element in the stream.
- 
 
 # Example 1:
 
@@ -21,7 +20,6 @@
 # kthLargest.add(10);  // return 5
 # kthLargest.add(9);   // return 8
 # kthLargest.add(4);   // return 8
- 
 
 # Constraints:
 
@@ -45,11 +43,10 @@ class KthLargest
     else
       @nums.insert(i, val)
     end
-      @nums[-@k]
+    @nums[-@k]
   end
 end
 
-  # Your KthLargest object will be instantiated and called as such:
-  # obj = KthLargest.new(k, nums)
-  # param_1 = obj.add(val)
-  
+# Your KthLargest object will be instantiated and called as such:
+# obj = KthLargest.new(k, nums)
+# param_1 = obj.add(val)

@@ -1,15 +1,15 @@
-# Suppose you're given a binary tree represented as an array. For example, 
+# Suppose you're given a binary tree represented as an array. For example,
 # [3,6,2,9,-1,10] represents the following binary tree (where -1 is a non-existent node):
 
 # enter image description here
 
 # Write a function that determines whether the left or right branch of the tree is larger.
-# The size of each branch is the sum of the node values. The function should return the string 
+# The size of each branch is the sum of the node values. The function should return the string
 # "Right" if the right side is larger and "Left" if the left side is larger. If the tree has 0 nodes or if the size of the branches are equal, return the empty string.
 
 # Example Input:
 
-# [3,6,2,9,-1,10] 
+# [3,6,2,9,-1,10]
 # Example Output:
 
 # Left
@@ -68,4 +68,4 @@ def solution(arr)
   left > right ? 'Left' : 'Right'
 end
 
-puts solution([3,6,2,9,-1,10])
+puts solution([3, 6, 2, 9, -1, 10])

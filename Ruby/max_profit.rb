@@ -4,8 +4,6 @@
 
 # Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
 
- 
-
 # Example 1:
 
 # Input: prices = [7,1,5,3,6,4]
@@ -17,13 +15,11 @@
 # Input: prices = [7,6,4,3,1]
 # Output: 0
 # Explanation: In this case, no transactions are done and the max profit = 0.
- 
 
 # Constraints:
 
 # 1 <= prices.length <= 105
 # 0 <= prices[i] <= 104
-
 
 # @param {Integer[]} prices
 # @return {Integer}
@@ -47,4 +43,4 @@ def max_profit(prices)
   ans
 end
 
-puts max_profit([7,1,5,3,6,4])
+puts max_profit([7, 1, 5, 3, 6, 4])

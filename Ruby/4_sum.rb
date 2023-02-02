@@ -10,8 +10,6 @@
 # nums[a] + nums[b] + nums[c] + nums[d] == target
 # You may return the answer in any order.
 
- 
-
 # Example 1:
 
 # Input: nums = [1,0,-1,0,-2,2], target = 0
@@ -20,7 +18,6 @@
 
 # Input: nums = [2,2,2,2,2], target = 8
 # Output: [[2,2,2,2]]
-
 
 # Constraints:
 
@@ -41,7 +38,6 @@
 # @param {Integer[]} nums
 # @param {Integer} target
 # @return {Integer[][]}
-
 
 # def four_sum(nums, target)
 #   nums.sort!
@@ -111,17 +107,17 @@ def four_sum(nums, target)
   result = Set.new
   n = nums.length
 
-  for i in 0...n
-    for j in ((i + 1)...n)
+  (0...n).each do |i|
+    ((i + 1)...n).each do |j|
       sum = nums[i] + nums[j]
 
-        for item in map[target - sum]
-          s = item.to_a + [nums[i], nums[j]]
-          result.add(s)
-        end
+      map[target - sum].each do |item|
+        s = item.to_a + [nums[i], nums[j]]
+        result.add(s)
+      end
     end
 
-    for k in (0...i)
+    (0...i).each do |k|
       sum = nums[i] + nums[k]
       item = [nums[i], nums[k]]
       map[sum].add(item)
@@ -130,7 +126,6 @@ def four_sum(nums, target)
 
   result.to_a
 end
-
 
 require 'minitest/autorun'
 

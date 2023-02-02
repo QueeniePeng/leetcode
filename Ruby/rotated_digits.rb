@@ -8,8 +8,6 @@
 # the rest of the numbers do not rotate to any other number and become invalid.
 # Given an integer n, return the number of good integers in the range [1, n].
 
- 
-
 # Example 1:
 
 # Input: n = 10
@@ -24,7 +22,6 @@
 
 # Input: n = 2
 # Output: 1
- 
 
 # Constraints:
 
@@ -53,7 +50,7 @@ def rotated_digits(n)
 
       temp += h[c].to_s
     end
-    ans += 1 if (temp.length == num_s.length && temp.to_i != num)
+    ans += 1 if temp.length == num_s.length && temp.to_i != num
   end
   ans
 end

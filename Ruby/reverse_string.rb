@@ -2,8 +2,6 @@
 
 # If there are fewer than k characters left, reverse all of them. If there are less than 2k but greater than or equal to k characters, then reverse the first k characters and leave the other as original.
 
- 
-
 # Example 1:
 
 # Input: s = "abcdefg", k = 2
@@ -12,7 +10,6 @@
 
 # Input: s = "abcd", k = 2
 # Output: "bacd"
- 
 
 # Constraints:
 
@@ -26,9 +23,10 @@
 
 def reverse_str(s, k)
   s = s.chars
-  (0..s.length-1).step(2*k) do |i|
-      left, right = i, [i+k-1, s.length-1].min
-      s[left..right] = s[left..right].reverse
+  (0..s.length - 1).step(2 * k) do |i|
+    left = i
+    right = [i + k - 1, s.length - 1].min
+    s[left..right] = s[left..right].reverse
   end
   s.join
 end

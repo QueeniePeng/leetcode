@@ -1,5 +1,5 @@
-# Given an integer array nums of 2n integers, 
-# group these integers into n pairs (a1, b1), (a2, b2), ..., (an, bn) such that the sum of min(ai, bi) for all i 
+# Given an integer array nums of 2n integers,
+# group these integers into n pairs (a1, b1), (a2, b2), ..., (an, bn) such that the sum of min(ai, bi) for all i
 # is maximized. Return the maximized sum.
 
 # Example 1:
@@ -16,7 +16,6 @@
 # Input: nums = [6,2,6,5,1,2]
 # Output: 9
 # Explanation: The optimal pairing is (2, 1), (2, 5), (6, 6). min(2, 1) + min(2, 5) + min(6, 6) = 1 + 2 + 6 = 9.
- 
 
 # Constraints:
 
@@ -38,4 +37,4 @@ def array_pair_sum(nums)
   ans
 end
 
-puts array_pair_sum([1,4,3,2])
+puts array_pair_sum([1, 4, 3, 2])

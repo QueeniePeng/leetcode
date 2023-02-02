@@ -3,13 +3,11 @@
 # 23.4K
 # 1.4K
 # Companies
-# Given a string s, return the longest 
+# Given a string s, return the longest
 # palindromic
- 
+
 # substring
 #  in s.
-
- 
 
 # Example 1:
 
@@ -20,7 +18,6 @@
 
 # Input: s = "cbbd"
 # Output: "bb"
- 
 
 # Constraints:
 
@@ -32,7 +29,6 @@
 # 7M
 # Acceptance Rate
 # 32.4%
-
 
 def longest_palindrome(s)
   reverse_s = s.reverse

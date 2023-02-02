@@ -1,10 +1,8 @@
 # Your friend is typing his name into a keyboard. Sometimes, when typing a character c,
 #  the key might get long pressed, and the character will be typed 1 or more times.
 
-# You examine the typed characters of the keyboard. Return True if it is possible 
+# You examine the typed characters of the keyboard. Return True if it is possible
 # that it was your friends name, with some characters (possibly none) being long pressed.
-
- 
 
 # Example 1:
 
@@ -16,7 +14,6 @@
 # Input: name = "saeed", typed = "ssaaedd"
 # Output: false
 # Explanation: 'e' must have been pressed twice, but it was not in the typed output.
- 
 
 # Constraints:
 
@@ -56,16 +53,16 @@
 #   return j == typed.length && i == name.length
 # end
 
-def is_long_pressed_name(name, typed)
+def is_long_pressed_name(_name, typed)
   i = 0
 
   dict = {}
   while i < typed.length
-    
+
   end
 end
 
-puts is_long_pressed_name('alex', "aaleexa")
+puts is_long_pressed_name('alex', 'aaleexa')
 puts is_long_pressed_name('saeed', 'ssaaedd')
 puts is_long_pressed_name('leelee', 'lleeelee')
 # true

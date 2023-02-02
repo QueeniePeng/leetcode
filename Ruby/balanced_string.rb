@@ -5,8 +5,6 @@
 # Each substring is balanced.
 # Return the maximum number of balanced strings you can obtain.
 
- 
-
 # Example 1:
 
 # Input: s = "RLRRLLRLRL"
@@ -23,7 +21,6 @@
 # Input: s = "LLLLRRRR"
 # Output: 1
 # Explanation: s can be split into "LLLLRRRR".
- 
 
 # Constraints:
 

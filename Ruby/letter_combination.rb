@@ -3,14 +3,11 @@
 # 13.8K
 # 801
 # Companies
-# Given a string containing digits from 2-9 inclusive, 
+# Given a string containing digits from 2-9 inclusive,
 # return all possible letter combinations that the number could represent. Return the answer in any order.
 
-# A mapping of digits to letters (just like on the telephone buttons) is given below. 
+# A mapping of digits to letters (just like on the telephone buttons) is given below.
 # Note that 1 does not map to any letters.
-
-
- 
 
 # Example 1:
 
@@ -24,7 +21,6 @@
 
 # Input: digits = "2"
 # Output: ["a","b","c"]
- 
 
 # Constraints:
 
@@ -39,21 +35,20 @@
 # Seen this question in a real interview before?
 # 1/4
 
-
 # @param {String} digits
 # @return {String[]}
 def letter_combinations(digits)
   res = []
 
   hash = {
-    2 => ['a', 'b', 'c'],
-    3 => ['d', 'e', 'f'],
-    4 => ['g', 'h', 'i'],
-    5 => ['j', 'k', 'l'],
-    6 => ['m', 'n', 'o'],
-    7 => ['p', 'q', 'r', 's'],
-    8 => ['t', 'u', 'v'],
-    9 => ['w', 'x', 'y', 'z']
+    2 => %w[a b c],
+    3 => %w[d e f],
+    4 => %w[g h i],
+    5 => %w[j k l],
+    6 => %w[m n o],
+    7 => %w[p q r s],
+    8 => %w[t u v],
+    9 => %w[w x y z]
   }
 
   digits.each_char do |char|
@@ -78,16 +73,16 @@ end
 require 'minitest/autorun'
 class LetterCombinationsTest < Minitest::Test
   def test_example1
-    assert_equal(["ad","ae","af","bd","be","bf","cd","ce","cf"], letter_combinations('23'))
+    assert_equal(%w[ad ae af bd be bf cd ce cf], letter_combinations('23'))
   end
 
   def test_example2
-    assert_equal(["a","b","c"], letter_combinations('2'))
+    assert_equal(%w[a b c], letter_combinations('2'))
   end
 
   def test_example3
-    assert_equal(["adg","adh","adi","aeg","aeh","aei","afg","afh","afi","bdg","bdh","bdi","beg","beh","bei","bfg","bfh","bfi","cdg","cdh","cdi","ceg","ceh","cei","cfg","cfh","cfi"],
-      letter_combinations('234'))
+    assert_equal(%w[adg adh adi aeg aeh aei afg afh afi bdg bdh bdi beg beh bei bfg bfh bfi cdg cdh cdi ceg ceh cei cfg cfh cfi],
+                 letter_combinations('234'))
   end
 end
 

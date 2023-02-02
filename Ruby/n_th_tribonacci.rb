@@ -3,13 +3,11 @@
 # 3.1K
 # 146
 # Companies
-# The Tribonacci sequence Tn is defined as follows: 
+# The Tribonacci sequence Tn is defined as follows:
 
 # T0 = 0, T1 = 1, T2 = 1, and Tn+3 = Tn + Tn+1 + Tn+2 for n >= 0.
 
 # Given n, return the value of Tn.
-
- 
 
 # Example 1:
 
@@ -23,7 +21,6 @@
 
 # Input: n = 25
 # Output: 1389537
- 
 
 # Constraints:
 
@@ -69,6 +66,6 @@ require 'test/unit'
 class TestTribonacci < Test::Unit::TestCase
   def test_
     assert_equal 4, tribonacci(4)
-    assert_equal 1389537, tribonacci(25)
+    assert_equal 1_389_537, tribonacci(25)
   end
 end

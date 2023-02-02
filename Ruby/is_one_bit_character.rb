@@ -4,8 +4,6 @@
 # The second character can be represented by two bits (10 or 11).
 # Given a binary array bits that ends with 0, return true if the last character must be a one-bit character.
 
- 
-
 # Example 1:
 
 # Input: bits = [1,0,0]
@@ -18,7 +16,6 @@
 # Output: false
 # Explanation: The only way to decode it is two-bit character and two-bit character.
 # So the last character is not one-bit character.
- 
 
 # Constraints:
 
@@ -42,4 +39,4 @@ def is_one_bit_character(bits)
   false
 end
 
-puts is_one_bit_character([1,0,0])
+puts is_one_bit_character([1, 0, 0])

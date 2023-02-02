@@ -17,7 +17,6 @@
 # The judge will receive two inputs: a function_id (to determine which implementation to test your code with), and the target z.
 # The judge will call your findSolution and compare your results with the answer key.
 # If your results match the answer key, your solution will be Accepted.
- 
 
 # Example 1:
 
@@ -37,7 +36,6 @@
 # The following positive integer values of x and y make f(x, y) equal to 5:
 # x=1, y=5 -> f(1, 5) = 1 * 5 = 5.
 # x=5, y=1 -> f(5, 1) = 5 * 1 = 5.
- 
 
 # Constraints:
 
@@ -45,7 +43,6 @@
 # 1 <= z <= 100
 # It is guaranteed that the solutions of f(x, y) == z will be in the range 1 <= x, y <= 1000.
 # It is also guaranteed that f(x, y) will fit in 32 bit signed integer if 1 <= x, y <= 1000.
-
 
 # 	This is the custom function interface.
 #	You should not implement it, or speculate about its implementation
@@ -56,7 +53,7 @@
 # 			i.e. f(x, y) < f(x + 1, y), f(x, y) < f(x, y + 1)
 # 		end
 # 	end
-# 
+#
 
 # @param {CustomFunction} customfunction
 # @param {Integer} z
