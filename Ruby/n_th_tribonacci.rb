@@ -66,7 +66,7 @@ def tribonacci(n, ans = [])
 end
 
 require 'test/unit'
-class Test_tribonacci < Test::Unit::TestCase
+class TestTribonacci < Test::Unit::TestCase
   def test_
     assert_equal 4, tribonacci(4)
     assert_equal 1389537, tribonacci(25)
