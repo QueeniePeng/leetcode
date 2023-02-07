@@ -62,13 +62,19 @@ end
 def max_vowels(s, k)
   count = s[0...k].scan(/[aeiou]/).count
   max_count = count
-  vowels = %w[a e i o u]
+  vowels = Set.new(%w[a e i o u])
 
   (0...(s.length - k)).each do |i|
-    count -= 1 if vowels.include?(s[i])
-    count += 1 if vowels.include?(s[i + k])
-    max_count = [count, max_count].max
-    return max_count if max_count == k
+    if vowels.include?(s[i])
+      count -= 1
+    end
+
+    if vowels.include?(s[i + k])
+      count += 1
+    end
+    return count if count == k
+
+    max_count = count if count > max_count
   end
   max_count
 end
