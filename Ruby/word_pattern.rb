@@ -2,8 +2,6 @@
 
 # Here follow means a full match, such that there is a bijection between a letter in pattern and a non-empty word in s.
 
- 
-
 # Example 1:
 
 # Input: pattern = "abba", s = "dog cat cat dog"
@@ -16,7 +14,6 @@
 
 # Input: pattern = "aaaa", s = "dog cat cat dog"
 # Output: false
- 
 
 # Constraints:
 

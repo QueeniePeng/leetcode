@@ -7,8 +7,6 @@
 
 # In other words, return true if one of s1's permutations is the substring of s2.
 
- 
-
 # Example 1:
 
 # Input: s1 = "ab", s2 = "eidbaooo"
@@ -18,7 +16,6 @@
 
 # Input: s1 = "ab", s2 = "eidboaoo"
 # Output: false
- 
 
 # Constraints:
 

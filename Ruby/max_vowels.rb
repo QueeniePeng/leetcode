@@ -7,8 +7,6 @@
 
 # Vowel letters in English are 'a', 'e', 'i', 'o', and 'u'.
 
- 
-
 # Example 1:
 
 # Input: s = "abciiidef", k = 3
@@ -24,7 +22,6 @@
 # Input: s = "leetcode", k = 3
 # Output: 2
 # Explanation: "lee", "eet" and "ode" contain 2 vowels.
- 
 
 # Constraints:
 
@@ -40,7 +37,7 @@ require 'set'
 
 # Time Limit Exceeded
 def max_vowels(s, k)
-  vowels = Set.new(['a', 'e', 'i', 'o', 'u'])
+  vowels = Set.new(%w[a e i o u])
   ans = 0
   last_k = []
 
@@ -65,20 +62,15 @@ def max_vowels(s, k)
   vowels = Set.new(%w[a e i o u])
 
   (0...(s.length - k)).each do |i|
-    if vowels.include?(s[i])
-      count -= 1
-    end
+    count -= 1 if vowels.include?(s[i])
 
-    if vowels.include?(s[i + k])
-      count += 1
-    end
+    count += 1 if vowels.include?(s[i + k])
     return count if count == k
 
     max_count = count if count > max_count
   end
   max_count
 end
-
 
 require 'test/unit'
 
