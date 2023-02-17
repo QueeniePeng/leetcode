@@ -32,6 +32,9 @@
 # end
 # @param {TreeNode} root
 # @return {Integer}
+
+require 'binary_trees'
+
 def min_diff_in_bst(root)
   @ans = 10**5
   @prev = 10**5
@@ -48,4 +51,12 @@ def walk(root)
   @ans = [@ans, (root.val - @prev).abs].min
   @prev = root.val
   walk(root.right) if root.right
+end
+
+require 'test/unit'
+
+class TestMinDiffInBST < Test::Unit::TestCase
+  def test_
+    assert_equal 1, min_diff_in_bst([4, 2, 6, 1, 3].to_tree)
+  end
 end
