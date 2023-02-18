@@ -60,8 +60,8 @@ require 'test/unit'
 
 class TestInvertTree < Test::Unit::TestCase
   def test_
-    assert_equal [4, 7, 2, 9, 6, 3, 1], Tree.new(invert_tree([4, 2, 7, 1, 3, 6, 9].to_tree)).to_a
-    assert_equal [2, 3, 1], Tree.new(invert_tree([2, 1, 3].to_tree)).to_a
-    assert_equal [], Tree.new(invert_tree([].to_tree)).to_a
+    assert_equal [4, 7, 2, 9, 6, 3, 1], Tree.new(invert_tree([4, 2, 7, 1, 3, 6, 9].to_root)).to_a
+    assert_equal [2, 3, 1], Tree.new(invert_tree([2, 1, 3].to_root)).to_a
+    assert_equal [], Tree.new(invert_tree([].to_root)).to_a
   end
 end

@@ -57,6 +57,6 @@ require 'test/unit'
 
 class TestMinDiffInBST < Test::Unit::TestCase
   def test_
-    assert_equal 1, min_diff_in_bst([4, 2, 6, 1, 3].to_tree)
+    assert_equal 1, min_diff_in_bst([4, 2, 6, 1, 3].to_root)
   end
 end
