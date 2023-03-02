@@ -52,14 +52,13 @@ def compress(chars)
     h[c] ||= 0
     h[c] += 1
   end
+
   chars = []
   h.each_pair do |k, v|
     chars << k
-    if v == 1
-      next
-    else
-      chars += v.to_s.chars
-    end
+    next if v == 1
+
+    chars += v.to_s.chars
   end
   chars.length
 end
