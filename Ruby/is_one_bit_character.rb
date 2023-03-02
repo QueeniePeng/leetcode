@@ -30,11 +30,11 @@ def is_one_bit_character(bits)
   while i < bits.length
     return true if i == bits.length - 1 && bits[i] == 0
 
-    if bits[i].zero?
-      i += 1
-    else
-      i += 2
-    end
+    i += if bits[i].zero?
+           1
+         else
+           2
+         end
   end
   false
 end
