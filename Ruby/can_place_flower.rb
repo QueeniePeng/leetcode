@@ -39,12 +39,10 @@ def can_place_flowers(flowerbed, n)
   flowerbed.each_with_index do |f, i|
     return true if res.zero?
 
-    # check if nearby are zeros or out of bounds.
-    if ((i - 1).negative? || flowerbed[i - 1].zero?) && f.zero? && (i + 1 >= flowerbed.length || flowerbed[i + 1].zero?)
-      count -= 1
-      # if yes, plant the flower.
-      flowerbed[i] = 1
-    end
+    next unless ((i - 1).negative? || flowerbed[i - 1].zero?) && f.zero? && (i + 1 >= flowerbed.length || flowerbed[i + 1].zero?)
+
+    flowerbed[i] = 1
+    count -= 1
   end
   count.zero?
 end
