@@ -1,0 +1,213 @@
+Which of the following are NOT advantages of a serverless architecture?
+
+Reduced operational/management cost
+Decreased vendor lock in
+Improved scalability
+Higher availability
+Costs scale with usage
+I don't know.
+
+
+If you visit a website that has three web servers and a single load balancer, your browser will connect with which IP address?
+
+
+The public IP of the load balancer
+The public IP of one of the web servers
+The private IP of one of the web servers
+A composite IP address that wraps the load balancer and all web servers
+
+Which of the following is a common disadvantage of a microservices architecture?
+
+Decreased modularity
+Strong monitoring requirements
+Reduced fault isolation
+Lock in to single programming language
+Greater difficulty onboarding new developers
+
+
+What is the value assigned to x on the following script?
+
+function* test() {
+  yield 1;
+  yield 2;
+  yield true;
+}
+
+const a = test();
+a.next();
+const x = a.next();
+a.next();
+
+
+You have a SQL database with a users table. You want to find all the users who have signed up with a gmail.com email address. Which query would you use?
+
+select * from users where email like '%gmail.com%'
+select * from users where email like 'gmail.com%'
+select * from users where email like '%gmail%com%'
+select * from users where email like '%gmail.com'
+select * from users where email like 'gmail.com'
+
+
+In an object-oriented language, when might a class method be preferable to an instance method?
+
+When the method has no required arguments
+When the method updates or modifies global state
+When the method doesn't access or modify instance state
+Only if the class is an abstract base class
+
+
+Which of the following use cases would be the WORST to implement using a function as a service (e.g. AWS Lambda) implementation?
+
+Resizing an image
+Sending an email notification
+Converting a document to PDF
+Computing the n’th prime number (n < 1B digits)
+Computing the n’th perfect square (n < 1B digits)
+
+
+Assume you have a database named user with data for every user on Instagram. You want to find out which usernames include name 'Thomas'. Assuming that the username column isn't indexed, which query will run the slowest?
+
+SELECT * FROM user WHERE username LIKE "Thomas%";
+SELECT * FROM user WHERE username LIKE "Thomas";
+SELECT * FROM user WHERE username LIKE "%Thomas";
+SELECT * FROM user WHERE username LIKE "%Thomas%";
+
+
+The query that will run the slowest is the third query:
+
+sql
+Copy code
+SELECT * FROM user WHERE username LIKE "%Thomas";
+This is because the % wildcard at the beginning of the search term will prevent the use of any indexes, meaning that a full table scan will be required to find all matching records.
+
+The first and fourth queries will perform better because the wildcard is at the end of the search term, allowing for the use of an index for the prefix matching.
+
+The second query will perform even better because it is searching for an exact match, which can use an index efficiently.
+
+You have a very simple relational database table with 5 million rows mapping phone numbers (10 digit string) to zip codes (5 digit string). Your database has a 100GB magnetic disk, 16GB of RAM. You write a query to find all the phone numbers in the 94105 zip code that have area code 415, but the query takes several seconds to return. Which of the following is likely to give you the greatest performance improvement?
+
+Adding indexes to the table
+Changing from a magnetic disk to a SSD
+Increasing the amount of RAM from 16GB to 32GB
+Switching to a 200GB magnetic disk
+Rewrite your query to return all the phone numbers in the 94105 zip code and perform the filtering based on area code in your code
+
+
+Why are the following objects sourceA and sourceB not equal?
+
+const source = {name: "John"};
+const sourceA = Object.assign(source, {age: 10});
+const sourceB = {...source, age: 10};
+sourceA === sourceB // false
+
+sourceA is a new variable and sourceB is a new variable
+
+sourceA is a copy of source since it is adding properties to source and getting its updated value back, sourceB is extending the props from source and creating a new object
+
+sourceA modifies source and sourceB extends source, therefore they are the same
+
+the script is wrong, sourceA and sourceB are the same
+
+
+A website at http://example.com:80/folder/index.html is attempting to make requests to the following URLs. Which access is not blocked by the same-origin policy?
+
+http://example.com:81/folder/other.html
+http://example.com:80/folder/other.html
+v2.example.com:80/folder/other.html
+https://example.com/folder/other.html
+
+
+What is the primary purpose of CORS?
+
+It is a way for restricted resources on a particular domain to be accessed from a different domain.
+It is a standard used to verify that a user has access rights to a particular resource.
+It prevent cross-origin errors.
+None of the above
+
+The correct option is: It is a way for restricted resources on a particular domain to be accessed from a different domain.
+
+CORS (Cross-Origin Resource Sharing) is a security mechanism implemented by web browsers that allows a web page from one domain to access a resource with a different origin (a domain, protocol, and port number combination). It is a way to enable cross-domain communication, while preventing cross-site request forgery attacks.
+
+
+You’ve implemented an LRU cache using a hashmap and doubly linked list. Which of the following best describes its performance characteristics?
+
+O(1) lookup, O(n) insert
+O(n) lookup, O(n) insert
+O(log n) lookup, O(n) insert
+O(1) lookup, O(1) insert
+
+
+You have a SQL database for a user-uploaded video sharing site. It contains two tables: videos and likes. videos contains metadata about videos (e.g. title, description). likes has two columns (video_id, user_id) which indicate the users that have liked each video. You want to find all the videos that do not have any likes, using a single SQL query. What type of "join" would you use between the videos and likes table to most efficiently find the answer?
+
+
+Left Join
+This problem cannot be solved with a join
+Full Join
+Self Join
+Inner Join
+
+
+What is the size property of the set object, s, after running this code?
+
+s = new Set();
+s.add(0);
+s.add(1);
+s.add(1);
+s.add(2);
+s.add(3);
+s.add(5);
+s.add("1");
+s.add("1");
+s.add("2");
+
+
+Given a hash function H, password p and salt s, how should a server compute a salted, hashed value to store in its database?
+
+H(p) + s
+H(s) + H(p)
+H(p)
+H(p + s)
+
+
+The correct answer is H(p + s). To store a salted, hashed value, the password and salt should be concatenated before hashing. This technique is called salted hashing, and it helps prevent against attacks such as dictionary attacks and rainbow table attacks, where an attacker tries to precompute hashes for common passwords and then look up the hash in a table to crack the password.
+
+You have a simple HTML webpage with many paragraphs of text on the page. You want to generate a link that you can send to various people, but have them land on different paragraphs. Which components of the URL would you change in each link? Assume you can edit the HTML as you wish, but cannot run Javascript or change the server side routing rules.
+
+
+domain
+protocol
+path
+query
+hash
+
+
+Which of the following is NOT true about the differences between a Map and an Object in Javascript?
+
+Maps have a size property, Objects do not
+Maps allow arbitrary key types, Objects do not
+Maps are iterable, Objects are not
+Maps keys are unordered, Object keys are ordered
+
+
+When storing user credentials, how can you remove the security vulnerabilities resulting from different users having the same password?
+
+This doesn't matter, because passwords are encrypted
+Enforce a unique password policy at the database level
+Add a unique random value to each password before hashing
+Add a system-wide random value that you can add to all passwords before hashing
+
+
+If a hash table has a hash function that sends all keys to the same bucket, what is the average time complexity of insert and lookup actions?
+
+O(1), O(N)
+O(N), O(N)
+O(1), O(1)
+O(1), O(N^2)
+
+
+Imagine you're creating an API that allows users to signup and create new accounts. In addition to creating a user record, account creation kicks off multiple additional backend actions such as sending a welcome email. The entire process of creating a user record and completing the additional actions takes 5-7 seconds. What should the API do while those tasks are taking place?
+
+The user ID should be returned immediately and additional actions should be sent to an asynchronous event queue.
+The API request shouldn't return until the tasks have completed 5-7 seconds later
+The various tasks should be split between multiple API endpoints, so user creation requires multiple, short requests.
+All extra actions should be removed, and only basic account creation should take place.
