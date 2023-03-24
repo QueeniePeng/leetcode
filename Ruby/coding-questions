@@ -10,7 +10,6 @@ I don't know.
 
 If you visit a website that has three web servers and a single load balancer, your browser will connect with which IP address?
 
-
 The public IP of the load balancer
 The public IP of one of the web servers
 The private IP of one of the web servers
