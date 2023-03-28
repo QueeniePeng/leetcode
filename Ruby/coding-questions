@@ -210,3 +210,139 @@ The user ID should be returned immediately and additional actions should be sent
 The API request shouldn't return until the tasks have completed 5-7 seconds later
 The various tasks should be split between multiple API endpoints, so user creation requires multiple, short requests.
 All extra actions should be removed, and only basic account creation should take place.
+
+
+You have the two associated models shown below about authors and the books they wrote.
+Which of the available queries returns the authors who have written at least one book?
+
+Author.joins(:books).distinct
+Author.includes(:books).distinct
+Book.includes(:author)
+Author.all.includes(:books)
+
+
+Consider the following routing snippets, and then choose the sentence that is correct.
+
+namespace :admin do
+  resources :articles, :comments
+end
+
+scope :admin do
+  resources :articles, :comments
+end
+
+resources :articles, module: 'admin'
+resources :comments, module: 'admin'
+
+resources :articles, path: '/admin/articles'
+resources :comments, path: '/admin/articles'
+
+(I) and (II) are similar, and (III) and (IV) are similar.
+(I) and (III) are similar, and (II) and (IV) are similar.
+(I) and (IV) are similar, and (II) and (III) are similar.
+(I) and (II) are similar, but (III) and (IV) are not valid routes.
+
+The correct sentence is:
+
+(I) and (II) are similar, and (III) and (IV) are similar.
+
+Explanation:
+
+(I) and (II) are similar in that they both define a namespace or a scope for the routes. They create URLs that start with "/admin/articles" and "/admin/comments", respectively. The difference is that (I) uses a namespace block, while (II) uses a scope block.
+
+(III) and (IV) are similar in that they both use the "module" option to specify the namespace for the routes. They both create URLs that start with "/admin/articles" and "/admin/comments", respectively.
+
+Option (I) and option (IV) are not similar, as (I) uses a namespace block and (IV) uses the "path" option to specify the URL. Option (III) is not a valid route, as it specifies the module for comments incorrectly. It should be:
+
+resources :comments, module: 'admin'
+
+
+Which of the following renders a form partial in Rails? 
+SELECT ALL THAT APPLY
+
+1: <%= render partial: 'form', locals: { author: @author } %>
+2: <%= render partial: 'form', author: @author %>
+3: <%= render 'form', locals: { author: @author } %>
+4: <%= render 'form', author: @author %>
+5: <% render ‘form’, author: @author %>
+6: <% render partial: 'form', locals: { author: @author } %>
+
+Which of the following queries will work with the ActiveJob given below?
+SELECT ALL THAT APPLY
+
+class DailySummaryJob < ApplicationJob
+  queue_as :default
+  def perform(user)
+    DailyDigestMailer.morning_brief(user.email).deliver_now
+  end
+end
+
+DailySummaryJob.perform(User.last)
+DailySummaryJob.set(wait: 2.seconds).perform_later(User.last)
+DailySummaryJob.perform_now(User.last)
+DailySummaryJob.perform_later(User.last)
+DailySummaryJob.perform(User.last).now
+DailySummaryJob.perform(User.last).later
+
+
+Sure, here are some multiple-choice questions that might be asked in a Ruby on Rails interview:
+
+Which of the following is NOT a built-in association type in Ruby on Rails?
+A) has_one
+B) has_many
+C) belongs_to
+D) has_belongs_to_many
+
+Which of the following is a popular database management system used with Ruby on Rails?
+A) MySQL
+B) MongoDB
+C) PostgreSQL
+D) All of the above
+
+What is the command to generate a new Ruby on Rails migration file?
+A) rails new
+B) rails generate controller
+C) rails generate migration
+D) rake db:migrate
+
+Which of the following is used to render a partial view in a Ruby on Rails application?
+A) render 'partial_name'
+B) render :partial => 'partial_name'
+C) <%= render 'partial_name' %>
+D) All of the above
+
+Which of the following is a popular testing framework used in Ruby on Rails development?
+A) PHPUnit
+B) RSpec
+C) Mocha
+D) Jasmine
+
+Which of the following is a popular authentication gem used in Ruby on Rails development?
+A) Devise
+B) Omniauth
+C) Cancancan
+D) All of the above
+
+Which of the following is NOT a commonly used HTTP verb in a RESTful Ruby on Rails API?
+A) GET
+B) POST
+C) DELETE
+D) PATCH
+
+Which of the following is the correct syntax for defining a route in Ruby on Rails?
+A) route '/users', to: 'users#index'
+B) route '/users', :to => 'users#index'
+C) get '/users', to: 'users#index'
+D) All of the above
+
+Which of the following is used to create a new Rails application with a specific version of Ruby?
+A) rails new myapp --ruby-version=2.7.2
+B) rails new myapp --version=2.7.2
+C) rails new myapp -r=2.7.2
+D) rails new myapp --ruby=2.7.2
+
+What is the purpose of the "yield" keyword in a Ruby on Rails view?
+A) It is used to define a local variable.
+B) It is used to execute a block of code.
+C) It is used to render a partial view.
+D) It is used to define a new method.
