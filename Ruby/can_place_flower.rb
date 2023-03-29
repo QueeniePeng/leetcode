@@ -39,7 +39,9 @@ def can_place_flowers(flowerbed, n)
   flowerbed.each_with_index do |f, i|
     return true if res.zero?
 
-    next unless ((i - 1).negative? || flowerbed[i - 1].zero?) && f.zero? && (i + 1 >= flowerbed.length || flowerbed[i + 1].zero?)
+    unless ((i - 1).negative? || flowerbed[i - 1].zero?) && f.zero? && (i + 1 >= flowerbed.length || flowerbed[i + 1].zero?)
+      next
+    end
 
     flowerbed[i] = 1
     count -= 1
