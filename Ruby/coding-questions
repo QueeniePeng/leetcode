@@ -346,3 +346,384 @@ A) It is used to define a local variable.
 B) It is used to execute a block of code.
 C) It is used to render a partial view.
 D) It is used to define a new method.
+
+1: The Task model below has two attributes: title and status
+
+Which of the following callbacks can be used with it? | C
+
+<!-- before_save will also fire on Update operations, while before_create will only fire on Creates. -->
+
+class Task < ApplicationRecord
+  validates :title, presence: true
+
+  def set_default_status
+    self.status = 'pending'
+  end
+end
+
+before_save :set_default_status
+
+before_commit :set_default_status
+
+before_create :set_default_status
+
+before_create_commit :set_default_status
+
+2: Which of the following is the correct command to roll back a migration with the timestamp 20210613165252? | C
+
+rails db:migrate:rollback VERSION=20210613165252
+
+rails db:migrate VERSION=20210613165252
+
+rails db:migrate:down VERSION=20210613165252
+
+rails db:migrate:down version=20210613165252
+
+rails db:rollback:down VERSION=20210613165252
+
+3: Which of the following is an incorrect implementation of the project model? | A
+
+class Project < ApplicationRecord
+  default_scope -> { order('created_at DESC updated_at <= ?', DateTime.current).includes(:developers) }
+  has_and_belongs_to_many :developers
+end
+
+class Project < ApplicationRecord
+  default_scope -> { order(created_at: :desc).includes(:developers, :devlopers_projects).where('updated_at <= ?', DateTime.current) }
+  has_and_belongs_to_many :developers
+end
+
+class Project < ApplicationRecord
+  default_scope -> { order('created_at DESC).where('updated_at <= ?', DateTime.current).includes(:developers) }
+  has_and_belongs_to_many :developers
+end
+
+class Project < ApplicationRecord
+  default_scope -> { includes(:developers).order(created_at: :desc) }
+  has_and_belongs_to_many :developers
+end
+
+4: Which of the following is a correct implementation of a concern?
+
+module SomeConcern
+  extend ActiveSupport::Concern
+
+  included_do
+  end
+
+  prepended_do
+  end
+
+  prepended_do
+  end
+end
+
+module SomeConcern
+  extend ActiveSupport::Concern
+
+  included_do
+  end
+
+  prepended_do
+  end
+end
+
+module SomeConcern
+  extend ActiveSupport::Concern
+
+  included_do
+  end
+
+  prepended_do
+  end
+  
+  included_do
+  end
+end
+
+module SomeConcern
+  extend ActiveSupport::Concern
+
+  extended_do
+  end
+end
+
+5: Which of the following callbacks skip rendering the view template and only return the status code? | none of them do? | B?
+
+around_action do
+  puts 'I am a different callback!!!'
+end
+
+skip_before_action do
+  puts 'I am a different callback!!!'
+end
+
+after_action do
+  puts 'I am a different callback!!!'
+end
+
+before_action do
+  puts 'I am a different callback!!!'
+end
+
+
+6: True or False: The namespace routes will automatically add :as as well as :module and :path prefixes | True
+
+True | False
+
+7: You were asked to delete the session for currently signed-in users whenever CSRF(Cross-Site Request Forgery)is missing from incoming requests.
+Which of the following rescue blocks achieves that? | B
+
+rescue_from
+ActionDispatch::Session::InvalidAuthenticityToken do |exception|
+  def delete_current_cuser_session
+  end
+end
+
+rescue_from
+ActionController::InvalidAuthenticityToken do |exception|
+  def delete_current_cuser_session
+  end
+end
+
+rescue_from
+ActionController::Session::InvalidAuthenticityToken do |exception|
+  def delete_current_cuser_session
+  end
+end
+
+rescue_from
+ActionDispatch::InvalidAuthenticityToken do |exception|
+  def delete_current_cuser_session
+  end
+end
+
+
+8: Which of the following button_to tags will function the same way as the link givin below? | C
+
+<%= link_to 'New Article', new_article_path %>
+
+<%= button_to 'New Article', new_article_path, type: 'button' %>
+
+<%= button_to 'New Article', new_article_path, method: 'get' %> # default post
+
+<%= button_to 'New Article', new_article_path %>
+
+<%= button_to 'New Article', new_article_path, role: 'button' %>
+
+9: Which of the following controller actions is implemented correctly to render the site layout? | C
+
+def index
+  @users = User.find_each
+  layout 'site'
+end
+
+def index
+  @users = User.find_each
+  render layout: :site
+end
+
+def index
+  @users = User.find_each
+  render layout: 'site'
+end
+
+def index
+  render layout: 'site'
+  @users = User.find_each
+end
+
+
+10: Which of the following statements is correct regarding Webpacker? | A
+
+Event if your application has Webpacker, you can still choose Sprockets to serve both JS and CSS.
+
+Webpacker allows Sprockets to serve CSS only and prevents Sprokets from serving JS.
+
+With Webpacker you can not use both lines in the layout mentioned below:
+<%= stylesheet_pack_tag 'application', media: 'all', 'data_turbolinks_track': 'reload' %>
+<%= stylesheet_link_tag 'application', media: 'all', 'data_turbolinks_track': 'reload' %>
+
+Wepacker prevents the use of Sprockets to serve access
+
+11: You are givin a Book model to add a cover_image using Active Storage.
+Which of the following implementations is correct? | B
+
+class Book < ApplicationRecord
+  belongs_to :author
+  has_attached { one: :conver_image }
+end
+
+class Book < ApplicationRecord
+  belongs_to :author
+  has_one_attached :cover_image
+end
+
+class Book < ApplicationRecord
+  belongs_to :author
+  has_attached :cover_image
+end
+
+class Book < ApplicationRecord
+  belongs_to :author
+  has_attached_one :cover_image
+end
+
+12: Which of the following options is correct for sending an inline attachment with an email? | D
+
+attachments.inline['image.jpg'] = 
+File.write(Rails.root.join('app/assets/images/sample_image.jpg'))
+
+attachments.inline['image.jpg'] = 
+File.open(Rails.root.join('app/assets/images/sample_image.jpg'))
+
+attachments.inline['image.jpg'] = 
+File.send(Rails.root.join('app/assets/images/sample_image.jpg'))
+
+attachments.inline['image.jpg'] = 
+File.read(Rails.root.join('app/assets/images/sample_image.jpg'))
+
+You have a User model with two types of users: Customer and Client. 
+You are asked to implement an STI(Single table inheritance) to generate a Customer model.
+
+1: Which of the following options is correct regarding the model generator below?
+| C
+
+rails g model customer --parent=user
+
+it will raise an exception because the model name in the generator must be capitalized.
+
+it will create a customer model inherited by the user model and create a migration that creates a customer table with type attribute only.
+
+it will create a Customer model inherited by the User model and add type attributes to the User model.
+
+it will create a customer model inherited by the user model and you will need to create a migration for adding type attributes in the User model.
+
+3: Which of the following queries optimize the check for the existence of Project model objects? | D
+
+Project.all.blank?
+Project.all.size
+Project.all.present?
+Project.all.empty?
+Project.find_each
+
+4: For which of the following cases can the permitted params given below be used?
+
+params.require(:author).permit(:name, :bio, book_attributes: [:id, :title, :price, :isbn_number, :_destroy]) | B
+
+when the route for a book and author is defined using namespace
+
+when a book form is submitted as a nested form within the author form.
+
+when a resourse book is nested within the author resource
+
+when the route for a book and author is defined using scope.
+
+6: which of the following will generate a route similar to user_admin_users? C & D
+
+resources :users do
+  member do
+    get :admin_users
+  end
+end
+
+resources :users do
+  get :admin_users
+end
+
+resources :users do
+  get :admin_users, on: :member
+end
+
+resources :users do
+  get :admin_users, 'on' => 'member'
+end
+
+7: Which of the following is a correct implementation of a helper class? | C
+
+module ApplicationHelper < ActionHelper::Base
+  def formatted_date(date)
+  end
+end
+
+module ApplicationHelper < ActionView::Helper
+  def formatted_date(date)
+  end
+end
+
+module ApplicationHelper
+  def formatted_date(date)
+  end
+end
+
+module ApplicationHelper < ActionController::Base
+  def formatted_date(date)
+  end
+end
+
+8: Given this partial _book_fields.html.erb,
+
+<% author.books.each do |book| %>
+  <%= form.fields_for book, index: book.id do | book_form | %>
+    <%= book_form.text_field :title %>
+  <% end %>
+<% end %>
+
+Which of the following pieces of render syntax is correct for including the partial template below in an author form? | B
+
+<%= render partial: 'book_fields', author: author, form: form %>
+<%= render partial: 'book_fields', locals: { author: author, form: form } %>
+<%= render 'book_fields', author: author, form: form_with %>
+<%= render 'book_fields', author: author, form: form %>
+
+
+9: Given a concern called Scoppable, which of the following prints the attributes of a model instance into which Scoppable has been included? | B
+
+module Scoppable
+  extend ActiveSupport::Concern
+  instance_methods do
+    def print_values
+      self.attributes
+    end
+  end
+end
+
+module Scoppable
+  extend ActiveSupport::Concern
+  def print_values
+    self.attributes
+  end
+end
+
+module Scoppable
+  extend ActiveSupport::Concern
+  instance_methods do
+    def print_values
+      attributes
+    end
+  end
+end
+
+module Scoppable
+  extend ActiveSupport::Concern
+  def self.print_values
+    self.attributes
+  end
+end
+
+10: Which of the following is a valid table name used by Active Storage? | B
+
+active_storage_blob_variants
+active_storage_blob
+active_storage_blob_attachments
+active_storage_blob_records
+
+11: Which of the following is incorrect regarding ActionMailer? | B
+
+Mailers can be invoked from models, controllers, jobs, views and helpers.
+
+Mailers are not able to access the params hash.
+
+Mailers can have a different layout than the application.
+
+Like controllers, mailer actions also have views associated with them
