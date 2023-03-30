@@ -8,7 +8,7 @@ def is_substring(str1, str2)
   return length1 if str1 == str2
 
   str1.each_char.with_index do |_c, i|
-    return -1 if (i + length2 - 1) > length1 - 1
+    return -1 if (i + length2) > length1
     return i if str1[i, length2] == str2
   end
 end
@@ -18,6 +18,7 @@ require 'test/unit'
 class TestMinEngergy < Test::Unit::TestCase
   def test_
     assert_equal 1, is_substring('sdfagadg', 'dfa')
+    assert_equal 8, is_substring('sdfagadg', 'sdfagadg')
     assert_equal(-1, is_substring('adfadfadfasf', 'jk'))
   end
 end
