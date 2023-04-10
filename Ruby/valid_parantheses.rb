@@ -41,6 +41,7 @@
 # @return {Boolean}
 def is_valid(s)
   return false unless (s.length % 2).zero?
+
   char_hash = {
     '(' => ')',
     '[' => ']',
