@@ -52,8 +52,7 @@ def is_valid(s)
     if char_hash.key?(c)
       char_arr << char_hash[c]
     else
-      return false unless char_arr.length.positive?
-      return false if char_arr.pop != c
+      return false unless char_arr.length.positive? && char_arr.pop == c
     end
   end
   char_arr.empty?
